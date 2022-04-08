@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<title>TAREA#2</title>
+	<meta charset="utf-8" />
+</head>
+<body>
+    <form action="" name="formulario" method="get">
+    Nombres:<br />
+    <input type="text" name="nombre" id="nombre" maxlength="30" placeholder="nombre">
+    <br>
+    Apellidos:<br />
+    <input type="text" name="apellido" id="apellido" maxlength="30" placeholder="apellido">
+    <br>
+    <input type="radio" name="sexo" id="hombre" value="Hombre" >Hombre
+    <input type="radio" name="sexo" id="mujer" value="Mujer">Mujer
+    <br>
+    <input type="submit" name="btn" id="btn" value="emviar">
+    </form>
+    <h1>Ejercicio#1</h1>
+	<script >
+    (function(){
+        let formulario = document.getElementsByName(`formulario`)[0],
+            elmentos = formulario.elements,
+            boton = document.getElementById(`btn`);
+            
+        let validarNombre = function(e){
+            if(formulario.nombre.value == 0){
+                alert("complete el campo nombre");
+                e.preventDefault();
+            
+               }
+
+            };
+            let validarApellido = function(e){
+            if(formulario.apellido.value == 0){
+                alert("complete el campo apellido");
+                e.preventDefault();
+            
+               }
+
+            };
+        let validar = function(e){
+            validarNombre(e);
+            validarApellido(e);
+
+        };
+        
+
+         formulario.addEventListener("submit",validar);   
+    }())
+
+    </script>
+</body>
+</html>
